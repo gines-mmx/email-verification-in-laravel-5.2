@@ -72,6 +72,10 @@
         </div>
     </nav>
 
+    @if (Session::has('flash_message'))
+        <div class="alert alert-warning h3">{{ Session::get('flash_message') }}</div>
+    @endif
+
     @yield('content')
 
     <!-- JavaScripts -->

@@ -27,6 +27,8 @@
 Route::group(['middleware' => 'web'], function () {
     Route::auth();
 
+    Route::get('auth/register/confirm/{token}', 'Auth\AuthController@confirmEmail');
+
     Route::get('/', function () {
         return view('welcome');
     });
